@@ -4,15 +4,20 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #0c1924;
+}
+
+h1, p{
+    color: #ffffff;
 }
 
 .container {
     text-align: center;
-    background: #fff;
+    background: #0c1d2f;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border: 2px solid #0254a4;
 }
 
 input {
@@ -21,11 +26,13 @@ input {
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background: #0d1620;
+    color: #ffffff;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #0288d1;
     color: white;
     border: none;
     border-radius: 5px;
@@ -33,7 +40,7 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #019cef;
 }
 
 #result {
