@@ -82,7 +82,11 @@ The server will start on http://localhost:8001.
 - `public/` - Directory for static files.
 
 
-### Acknowledgments
+## Acknowledgments
 - Express.js - Web framework for Node.js
 - Mongoose - MongoDB object modeling tool
 - shortid - Generate short non-sequential unique IDs
+
+## Glimpse
+![URL Shrinker](https://github.com/user-attachments/assets/c64a6bf5-d813-4406-94e0-8db0dd17d1d2)
+
