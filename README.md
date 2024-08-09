@@ -49,7 +49,7 @@ To get started with the URLShrinker project, follow these steps:
 ```bash
    mongod
 
-    ```
+ ```
 
 2. **Database Connection:**
 
