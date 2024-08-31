@@ -1,53 +1,112 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #0c1924;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-h1, p, a{
-    color: #ffffff;
+h1,
+p,
+a {
+  color: #000;
+  text-align: left;
+  text-decoration: none;
 }
 
 .container {
-    text-align: center;
-    background: #0c1d2f;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border: 2px solid #0254a4;
+  text-align: center;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
 }
 
-input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #0d1620;
-    color: #ffffff;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #0288d1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #019cef;
-}
-
+.input-group,
 #result {
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap; 
+  width: 100%; 
+}
+
+input,
+p {
+  font-weight: 500;
+  flex: 1;
+  padding: 10px;
+  margin: 0;
+  border: none;
+  border: 1.5px solid #fff;
+  border-radius: 5px 0 0 5px;
+  background: transparent;
+  color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+  min-width: 0; /* Prevent input from overflowing */
+  box-sizing: border-box; /* Include padding and border in element's total width */
 }
 
 p {
-    margin-top: 10px;
-    font-size: 1.2em;
+  margin: 0;
+  border-radius: 5px 0 0 5px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  border: 1.5px solid #fff;
+  font-size: 1rem;
+  min-width: 100px; /* Ensure buttons are not too small */
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #019cef;
+}
+
+#shortenButton,
+#copyButton {
+  white-space: nowrap;
+}
+
+#copyButton {
+  padding: 10px 20px;
+  border-radius: 0 5px 5px 0;
+}
+
+@media (max-width: 600px) {
+  .input-group,
+  #result {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  input,
+  p,
+  button {
+    width: 100%; /* Make elements full width */
+    margin: 5px 0; /* Add space between stacked elements */
+    border-radius: 5px; /* Round borders for buttons */
+  }
 }

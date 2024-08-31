@@ -12,8 +12,11 @@ document.getElementById('shortenButton').addEventListener('click', async () => {
             const data = await response.json();
             const shortenedUrl = `${window.location.origin}/${data.id}`;
             const shortenedUrlElement = document.getElementById('shortenedUrl');
-            shortenedUrlElement.innerHTML = `Shrunken URL: <a href="${shortenedUrl}" target="_blank">${shortenedUrl}</a>`;
-            document.getElementById('copyButton').style.display = 'block';
+            shortenedUrlElement.innerHTML = `<a href="${shortenedUrl}" target="_blank">${shortenedUrl}</a>`;
+
+            // Show the result container
+            const resultContainer = document.getElementById('result');
+            resultContainer.style.display = 'flex'; // Display as flex to keep elements in line
 
             document.getElementById('copyButton').addEventListener('click', () => {
                 navigator.clipboard.writeText(shortenedUrl).then(() => {
