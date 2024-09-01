@@ -1,7 +1,7 @@
 # URLShrinker
 
 URLShrinker is a simple URL shortening service built with Node.js, Express, and MongoDB. It allows users to shorten URLs and track their usage.
-#### project is live at [URLShrinker](https://urlshrinker-prsw.onrender.com/)
+
 
 ## Features
 
@@ -89,5 +89,5 @@ The server will start on http://localhost:8001.
 - shortid - Generate short non-sequential unique IDs
 
 ## Glimpse
-![URL Shrinker](https://github.com/user-attachments/assets/c64a6bf5-d813-4406-94e0-8db0dd17d1d2)
+![URL Shrinker](https://github.com/user-attachments/assets/91bd2a4b-63a0-410f-b4dd-803543b3f221)
 
