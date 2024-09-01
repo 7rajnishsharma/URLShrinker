@@ -3,9 +3,10 @@ const { connectToMongoDB } = require("./connect");
 const urlRoute = require("./routes/url");
 const URL = require("./models/url");
 const path = require("path");
+require("dotenv").config();
 
 const app = express();
-const PORT = 8001;
+const PORT = process.env.PORT
 
 connectToMongoDB(process.env.MONGODB_URI).then(() =>
   console.log("Mongodb connected")
