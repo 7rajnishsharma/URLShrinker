@@ -10,10 +10,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@firebase/firestore": "^4.8.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "firebase": "^11.10.0",
     "mongoose": "^8.5.2",
     "nodemon": "^3.1.4",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.17"
   }
 }

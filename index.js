@@ -1,16 +1,12 @@
 const express = require("express");
-const { connectToMongoDB } = require("./connect");
 const urlRoute = require("./routes/url");
-const URL = require("./models/url");
 const path = require("path");
+const { doc, getDoc, updateDoc, arrayUnion } = require("firebase/firestore");
+const { db } = require("./firebase");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT
-
-connectToMongoDB(process.env.MONGODB_URI).then(() =>
-  console.log("Mongodb connected")
-);
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -18,25 +14,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/url", urlRoute);
 
 app.get("/:shortId", async (req, res) => {
-  const shortId = req.params.shortId;
-  const entry = await URL.findOneAndUpdate(
-    {
-      shortId,
-    },
-    {
-      $push: {
-        visitHistory: {
-          timestamp: Date.now(),
-        },
-      },
-    },
-    { new: true }
-  );
+  try {
+    const shortId = req.params.shortId;
+    const docRef = doc(db, "urls", shortId);
+    const docSnap = await getDoc(docRef);
 
-  if (entry) {
-    res.redirect(entry.redirectURL);
-  } else {
-    res.status(404).send("URL not found");
+    if (!docSnap.exists()) {
+      return res.status(404).send("URL not found");
+    }
+
+    await updateDoc(docRef, {
+      visitHistory: arrayUnion({ timestamp: Date.now() }),
+    });
+
+    res.redirect(docSnap.data().redirectURL);
+  } catch (error) {
+    console.error("Error redirecting:", error);
+    res.status(500).send("Internal server error");
   }
 });
 
