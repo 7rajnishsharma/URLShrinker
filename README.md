@@ -23,7 +23,7 @@ To get started with the URLShrinker project, follow these steps:
 1. **Clone the repository:**
 
 ```bash
-   git clone https://github.com/yourusername/urlshrinker.git
+   git clone https://github.com/7rajnishsharma/URLShrinker
 
    ```
 
