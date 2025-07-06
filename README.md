@@ -1,6 +1,6 @@
 # URLShrinker
 
-URLShrinker is a simple URL shortening service built with Node.js, Express, and MongoDB. It allows users to shorten URLs and track their usage.
+URLShrinker is a simple URL shortening service built with Node.js, Express, and firebase. It allows users to shorten URLs and track their usage.
 
 
 ## Features
